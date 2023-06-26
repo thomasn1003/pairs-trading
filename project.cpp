@@ -110,7 +110,7 @@ double pearsoncoeff(std::vector<double> stock1, std::vector<double> stock2)
 int main()
 {
     // Opens APPLE stock csv file
-    std::string myFile1 = "AAPL.csv";
+    std::string myFile1 = "GOOGL.csv";
     std::ifstream aapl;
     aapl.open(myFile1);
 
@@ -149,7 +149,7 @@ int main()
 
         line = "";
     }
-    std::cout << sum(applestock) << std::endl;
+
     
 
 
@@ -197,15 +197,18 @@ int main()
 
         line2 = "";
     }
-    std::cout << sum(msftstock) << std::endl;
+    
    
-    std::cout << "Calculating Pairs Trading Algorithms for Apple and Microsoft" << std::endl;
-    
-    
+    std::cout << "Calculating Pairs Trading Algorithms for Google and Microsoft" << std::endl;
+    std::cout << "Mean: " << "Google(" << mean(applestock) << ") and Microsoft(" << mean(msftstock) << ")\n";
+    std::cout << "Maximum: " << "Google(" << maximum(applestock) << ") and Microsoft(" << maximum(msftstock) << ")\n";
+    std::cout << "Minimum: " << "Google(" << minimum(applestock) << ") and Microsoft(" << minimum(msftstock) << ")\n";
+    std::cout << "Range " << "Google(" << range(applestock) << ") and Microsoft(" << range(msftstock) << ")\n";
+    std::cout << "Standard Deviation: " << "Google(" << stdev(applestock) << ") and Microsoft(" << stdev(msftstock) << ")\n";
+    std::cout << "Variance: " << "Google(" << variance(applestock) << ") and Microsoft(" << variance(msftstock) << ")\n";
+    std::cout << "Coeffient Correlation: " << pearsoncoeff(applestock,msftstock);
     std::cout << pearsoncoeff(applestock, msftstock) << std::endl;
-    std::cout << maximum(msftstock) << "\n";
-    std::cout << minimum(msftstock) << "\n";
-    std::cout << range(msftstock);
+
 
     aapl.close();
     msft.close();
